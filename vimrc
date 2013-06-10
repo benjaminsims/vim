@@ -2,6 +2,7 @@
 execute pathogen#infect()
 
 " The following are things I have installed through Pathogen, just here for my reference
+" along with any settings or mappings they use
 " https://github.com/scrooloose/syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker="flake8"
@@ -26,6 +27,20 @@ let g:SuperTabDefaultCompletionType = "context"
 " git submodule add https://github.com/fs111/pydoc.vim.git bundle/pydoc
 "
 
+" Jump around the file more easily
+" https://github.com/Lokaltog/vim-easymotion.git
+"
+" Auto relative / absolute line numbers
+" git submodule add  https://github.com/myusuf3/numbers.vim.git 
+"
+" Textmate / Pycharm style file opening using leader - t
+" git submodule add https://github.com/wincent/Command-T.git bundle/command-t
+" Also need to do rake make in the directory
+"
+
+
+" Slightly quicker saving
+nmap <leader>s :w<cr>
 
 
 " Code folding - za will now open and close code blocks
