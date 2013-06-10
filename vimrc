@@ -1,6 +1,24 @@
 " Load Pathogen
 execute pathogen#infect()
 
+" Change the leader, comma is easier to type
+let mapleader = ","
+
+" Flip the default behaviour of these - generally I want to go to the exact position
+" of a mark rather than just the start of a line
+nnoremap ' `
+nnoremap ` '
+
+" Allow buffer switching without having to save, remember settings etc
+set hidden
+
+" Disable annoying line wrapping, although this is likely to breach PEP8 line
+" length rules often
+set nowrap
+
+" Execute python when F5 is pressed
+autocmd BufRead *.py nmap <F5> :!python %<CR>
+
 " The following are things I have installed through Pathogen, just here for my reference
 " along with any settings or mappings they use
 " https://github.com/scrooloose/syntastic
@@ -73,6 +91,7 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
 
 "=======================================================================
 "	Start vimrc example stuff:
