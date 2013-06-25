@@ -15,18 +15,32 @@ set hidden
 " Disable annoying line wrapping, although this is likely to breach PEP8 line
 " length rules often
 set nowrap
+" Makes tabs work correctly, using spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Execute python when F5 is pressed
+" Seems to not be working?
 autocmd BufRead *.py nmap <F5> :!python %<CR>
+
+" Clear last search highlighting
+set hlsearch!
+nmap <leader>nh :set hlsearch!<cr>
 
 " The following are things I have installed through Pathogen, just here for my reference
 " along with any settings or mappings they use
-" https://github.com/scrooloose/syntastic
+" https://github.com/scrooloose/yntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker="flake8"
+" Easily toggle it on off
+nnoremap <silent> <leader>ns :SyntasticToggleMode<CR>
 
 " Ultisnips for snippet completion
 " https://github.com/vim-scripts/UltiSnips
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+
 "
 " View buffers nicely
 " git submodule add https://github.com/sontek/minibufexpl.vim.git
@@ -40,6 +54,19 @@ let g:syntastic_python_checker="flake8"
 " git submodule add https://github.com/ervandew/supertab.git bundle/supertab
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+
+" Let Ctrl n change from relative to absolute numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+
 
 " Access to the Python documentation
 " git submodule add https://github.com/fs111/pydoc.vim.git bundle/pydoc
@@ -55,10 +82,17 @@ let g:SuperTabDefaultCompletionType = "context"
 " git submodule add https://github.com/wincent/Command-T.git bundle/command-t
 " Also need to do rake make in the directory
 "
+" Easier commenting (mainly leader cc to comment a line)
+" git add submodule https://github.com/scrooloose/nerdcommenter.git
+"
+" Git commands in vim
+" git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 
 
-" Slightly quicker saving
-nmap <leader>s :w<cr>
+" Slightly quicker saving and quitting
+noremap <Leader>s :update<CR>
+nmap <leader>q :q<cr>
+nnoremap <leader>Q :update :q<cr>
 
 
 " Code folding - za will now open and close code blocks
