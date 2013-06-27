@@ -8,6 +8,9 @@ set nocompatible
 " Change the leader, comma is easier to type
 let mapleader = ","
 
+" Try out jj for exiting to normal mode
+inoremap jj <ESC>
+
 " Flip the default behaviour of these - generally I want to go to the exact position
 " of a mark rather than just the start of a line
 nnoremap ' `
