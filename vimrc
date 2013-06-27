@@ -33,7 +33,7 @@ nmap <leader>nh :set hlsearch!<cr>
 " along with any settings or mappings they use
 " https://github.com/scrooloose/yntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
+let g:syntastic_python_checkers=["flake8"]
 " Easily toggle it on off
 nnoremap <silent> <leader>ns :SyntasticToggleMode<CR>
 
@@ -91,8 +91,9 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " Slightly quicker saving and quitting
 noremap <Leader>s :update<CR>
-nmap <leader>q :q<cr>
-nnoremap <leader>Q :update :q<cr>
+noremap <Leader>q :q<cr>
+"Because of the above, I end up doing this
+noremap <Leader>sq :x<cr>
 
 
 " Code folding - za will now open and close code blocks
