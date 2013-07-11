@@ -1,8 +1,15 @@
 " Load Pathogen
 execute pathogen#infect()
 
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 " Change the leader, comma is easier to type
 let mapleader = ","
+
+" Try out jj for exiting to normal mode
+inoremap jj <ESC>
 
 " Flip the default behaviour of these - generally I want to go to the exact position
 " of a mark rather than just the start of a line
@@ -21,6 +28,20 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" Keep an undo file so things can be undone even after close
+set undofile
+
+" Make regex behave like python
+nnoremap / /\v
+vnoremap / /\v
+
+" Assume a search is lower case unless capitalised
+set ignorecase
+set smartcase
+
+" Default to 'global' replace on lines
+set gdefault
+
 " Execute python when F5 is pressed
 " Seems to not be working?
 autocmd BufRead *.py nmap <F5> :!python %<CR>
@@ -31,13 +52,13 @@ nnoremap <Leader>f :bn<CR>
 
 " Clear last search highlighting
 set hlsearch!
-nmap <leader>nh :set hlsearch!<cr>
+nmap <leader><space> :set hlsearch!<cr>
 
 " The following are things I have installed through Pathogen, just here for my reference
 " along with any settings or mappings they use
 " https://github.com/scrooloose/yntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
+let g:syntastic_python_checkers=["flake8"]
 " Easily toggle it on off
 nnoremap <silent> <leader>ns :SyntasticToggleMode<CR>
 
@@ -95,8 +116,9 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " Slightly quicker saving and quitting
 noremap <Leader>s :update<CR>
-nmap <leader>q :q<cr>
-nnoremap <leader>Q :update :q<cr>
+noremap <Leader>q :q<cr>
+"Because of the above, I end up doing this
+noremap <Leader>sq :x<cr>
 
 
 " Code folding - za will now open and close code blocks
@@ -131,19 +153,12 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 
-"=======================================================================
-"	Start vimrc example stuff:
-
-
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -153,10 +168,18 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
+
+" keep scrolling so there are lines below the cursor
+set scrolloff=3
+
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+
+" Show matching brace etc when one is inserted
+set showmatch
+
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
