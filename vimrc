@@ -25,6 +25,10 @@ set expandtab
 " Seems to not be working?
 autocmd BufRead *.py nmap <F5> :!python %<CR>
 
+" Convenience moving around buffers
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+
 " Clear last search highlighting
 set hlsearch!
 nmap <leader>nh :set hlsearch!<cr>
