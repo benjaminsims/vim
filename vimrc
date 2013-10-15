@@ -54,6 +54,10 @@ nnoremap <Leader>f :bn<CR>
 set hlsearch!
 nmap <leader><space> :set hlsearch!<cr>
 
+" Map S to 'stamp' - replace a word with register contents, without the old
+" word being saved to last register
+nnoremap S "_diwP
+
 " The following are things I have installed through Pathogen, just here for my reference
 " along with any settings or mappings they use
 " https://github.com/scrooloose/yntastic
