@@ -1,15 +1,40 @@
-" Load Pathogen
-execute pathogen#infect()
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Vundle stuff ========================
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" Vundle bundles here:
+"
+
+Bundle 'SirVer/ultisnips'
+Bundle 'wincent/Command-T'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/fugitive'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'fs111/pydoc.vim'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+" Need to make sure the appropriate package is installed as well
+Bundle 'nvie/vim-flake8'
+
+filetype plugin indent on     " required!
+" End Vundle stuff ========================
+
 " Change the leader, comma is easier to type
 let mapleader = ","
 
-" Try out jj for exiting to normal mode
-inoremap jj <ESC>
 
 " Flip the default behaviour of these - generally I want to go to the exact position
 " of a mark rather than just the start of a line
@@ -246,3 +271,7 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 "=======================================================================
+
+" Try out jj for exiting to normal mode; seems to be happier at the end as it
+" gets overwritten otherwise
+inoremap jj <ESC>
