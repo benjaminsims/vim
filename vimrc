@@ -28,6 +28,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 " Need to make sure the appropriate package is installed as well
 Bundle 'nvie/vim-flake8'
+" Experiment with this, which allows iTerm2 and Tmux to work with the Focus
+" commands for auto saving
+Bundle 'sjl/vitality.vim'
 
 filetype plugin indent on     " required!
 " End Vundle stuff ========================
