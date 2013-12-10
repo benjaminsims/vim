@@ -282,6 +282,10 @@ if !exists(":DiffOrig")
 endif
 "=======================================================================
 
+" Save when window focus is lost
+:au FocusLost * :wa
+
+
 " Try out jj for exiting to normal mode; seems to be happier at the end as it
 " gets overwritten otherwise
 inoremap jj <ESC>
