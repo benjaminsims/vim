@@ -31,6 +31,9 @@ Bundle 'bling/vim-airline'
 Bundle 'nvie/vim-flake8'
 " HTML navigation
 Bundle 'gcmt/breeze.vim'
+" Experiment with this, which allows iTerm2 and Tmux to work with the Focus
+" commands for auto saving
+Bundle 'sjl/vitality.vim'
 
 filetype plugin indent on     " required!
 " End Vundle stuff ========================
