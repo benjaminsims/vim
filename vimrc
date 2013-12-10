@@ -15,6 +15,7 @@ Bundle 'gmarik/vundle'
 " Vundle bundles here:
 "
 
+Bundle 'tpope/vim-surround'
 Bundle 'SirVer/ultisnips'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
@@ -28,6 +29,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 " Need to make sure the appropriate package is installed as well
 Bundle 'nvie/vim-flake8'
+" HTML navigation
+Bundle 'gcmt/breeze.vim'
 
 filetype plugin indent on     " required!
 " End Vundle stuff ========================
