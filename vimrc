@@ -16,12 +16,15 @@ Bundle 'gmarik/vundle'
 "
 
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-commentary'
 Bundle 'SirVer/ultisnips'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'scrooloose/nerdcommenter'
+"Trying the tpope version to see if simpler
+"Bundle 'scrooloose/nerdcommenter'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'ervandew/supertab'
