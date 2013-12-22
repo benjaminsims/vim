@@ -18,9 +18,12 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
+" Send tmux commands from vim
+Bundle 'benmills/vimux'
 Bundle 'SirVer/ultisnips'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'chrisbra/csv.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'fholgado/minibufexpl.vim'
 "Trying the tpope version to see if simpler
@@ -288,7 +291,12 @@ endif
 " Save when window focus is lost
 :au FocusLost * :wa
 
+" Run last vimux command easily for testing
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vp :VimuxPromptCommand<CR>
+
 
 " Try out jj for exiting to normal mode; seems to be happier at the end as it
 " gets overwritten otherwise
 inoremap jj <ESC>
+
