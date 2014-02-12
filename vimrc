@@ -293,7 +293,11 @@ endif
 
 " Run last vimux command easily for testing
 map <Leader>vl :VimuxRunLastCommand<CR>
+" Prompt for a command to run in vimux pane
 map <Leader>vp :VimuxPromptCommand<CR>
+" Send ctrl c to break out of debuggers etc
+nnoremap <leader>vc :call VimuxSendKeys("C-c") <CR>
+
 
 
 " Try out jj for exiting to normal mode; seems to be happier at the end as it
