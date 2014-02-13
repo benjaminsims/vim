@@ -296,7 +296,15 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 " Prompt for a command to run in vimux pane
 map <Leader>vp :VimuxPromptCommand<CR>
 " Send ctrl c to break out of debuggers etc
-nnoremap <leader>vc :call VimuxSendKeys("C-c") <CR>
+nnoremap <Leader>vc :call VimuxSendKeys("C-c") <CR>
+" Zoom the runner pane (many installs won't have it)
+map <Leader>vz :VimuxZoomRunner<CR>
+" Inspect the runner - focus on it and enable scroll mode
+map <Leader>vi :VimuxInspectRunner<CR>
+" More room
+let g:VimuxHeight = "40"
+
+
 
 
 
