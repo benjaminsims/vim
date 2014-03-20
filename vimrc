@@ -105,7 +105,7 @@ nnoremap <silent> <leader>ns :SyntasticToggleMode<CR>
 
 " Ultisnips for snippet completion
 " https://github.com/vim-scripts/UltiSnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "personal_snippets"]
 
 "
 " View buffers nicely
