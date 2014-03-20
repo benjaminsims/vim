@@ -39,6 +39,8 @@ Bundle 'gcmt/breeze.vim'
 " Experiment with this, which allows iTerm2 and Tmux to work with the Focus
 " commands for auto saving
 Bundle 'sjl/vitality.vim'
+" For python autocompletion and refactoring
+Bundle 'davidhalter/jedi-vim'
 
 
 " Ultisnips for snippet completion
