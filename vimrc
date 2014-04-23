@@ -44,8 +44,9 @@ Bundle 'sjl/vitality.vim'
 filetype plugin indent on     " required!
 " End Vundle stuff ========================
 
-" Change the leader, comma is easier to type
-let mapleader = ","
+" Try space as leader
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 
 " Flip the default behaviour of these - generally I want to go to the exact position
