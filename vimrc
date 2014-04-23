@@ -20,7 +20,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 " Send tmux commands from vim
 Bundle 'benmills/vimux'
-Bundle 'SirVer/ultisnips'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/csv.vim'
@@ -40,6 +39,27 @@ Bundle 'gcmt/breeze.vim'
 " Experiment with this, which allows iTerm2 and Tmux to work with the Focus
 " commands for auto saving
 Bundle 'sjl/vitality.vim'
+" For python autocompletion and refactoring
+Bundle 'davidhalter/jedi-vim'
+
+
+" Ultisnips for snippet completion
+" https://github.com/vim-scripts/UltiSnips
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "personal_snippets"]
+" Track the engine.
+Bundle 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Bundle 'honza/vim-snippets'
+
+" " Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 filetype plugin indent on     " required!
 " End Vundle stuff ========================
@@ -103,11 +123,6 @@ let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=["flake8"]
 " Easily toggle it on off
 nnoremap <silent> <leader>ns :SyntasticToggleMode<CR>
-
-" Ultisnips for snippet completion
-" https://github.com/vim-scripts/UltiSnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
-
 "
 " View buffers nicely
 " git submodule add https://github.com/sontek/minibufexpl.vim.git
