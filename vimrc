@@ -110,7 +110,7 @@ nnoremap <Leader>f :bn<CR>
 
 " Clear last search highlighting
 set hlsearch!
-nmap <leader><space> :set hlsearch!<cr>
+nmap <leader>c :set hlsearch!<cr>
 
 " Map S to 'stamp' - replace a word with register contents, without the old
 " word being saved to last register
