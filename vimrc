@@ -41,6 +41,10 @@ Bundle 'gcmt/breeze.vim'
 Bundle 'sjl/vitality.vim'
 " For python autocompletion and refactoring
 Bundle 'davidhalter/jedi-vim'
+" For True / False toggling etc
+Bundle 'AndrewRadev/switch.vim'
+nnoremap - :Switch<cr>
+
 
 
 " Ultisnips for snippet completion
@@ -49,7 +53,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "personal_snippets"]
 " Track the engine.
 Bundle 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
+" Snippets are separated from the engine.
 Bundle 'honza/vim-snippets'
 
 " " Trigger configuration. Do not use <tab> if you use
