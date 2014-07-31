@@ -24,7 +24,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/csv.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'techlivezheng/vim-plugin-minibufexplkk'
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
 "Trying the tpope version to see if simpler
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'myusuf3/numbers.vim'
