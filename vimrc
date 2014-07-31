@@ -20,11 +20,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 " Send tmux commands from vim
 Bundle 'benmills/vimux'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/csv.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'techlivezheng/vim-plugin-minibufexplkk'
 "Trying the tpope version to see if simpler
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'myusuf3/numbers.vim'
@@ -46,6 +46,9 @@ Bundle 'AndrewRadev/switch.vim'
 nnoremap - :Switch<cr>
 
 
+" For triggering CtrlP search
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Ultisnips for snippet completion
 " https://github.com/vim-scripts/UltiSnips
