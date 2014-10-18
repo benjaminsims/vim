@@ -32,6 +32,7 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
+set laststatus=2
 " Need to make sure the appropriate package is installed as well
 Bundle 'nvie/vim-flake8'
 " HTML navigation
@@ -331,7 +332,8 @@ let g:VimuxHeight = "40"
 
 
 
-" Try out jj for exiting to normal mode; seems to be happier at the end as it
+" Use jj and kk for exiting to normal mode; seems to be happier at the end as it
 " gets overwritten otherwise
 inoremap jj <ESC>
+inoremap kk <ESC>
 
