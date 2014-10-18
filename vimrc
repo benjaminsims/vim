@@ -316,7 +316,7 @@ endif
 :au FocusLost * :wa
 
 " Run last vimux command easily for testing
-map <Leader>vl :VimuxRunLastCommand<CR>:call VimuxSendKeys("C-c") <CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
 " Prompt for a command to run in vimux pane
 map <Leader>vp :VimuxPromptCommand<CR>
 " Send ctrl c to break out of debuggers etc
