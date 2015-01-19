@@ -328,7 +328,8 @@ map <Leader>vi :VimuxInspectRunner<CR>
 " More room
 let g:VimuxHeight = "40"
 
-set pastetoggle=<Leader>p
+set pastetoggle=<F2>
+
 
 
 " Copy direct to system clipboard
