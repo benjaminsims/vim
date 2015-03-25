@@ -201,10 +201,11 @@ filetype plugin indent on
 
 " Set the backup and temp directories to be in one place (you need to create
 " them) to avoid vim leaving files everywhere
+" Use full file names to avoid problems
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
-set undodir=~/.vim/tmp
+set backupdir=~/.vim/backup//
+set directory=~/.vim/tmp//
+set undodir=~/.vim/tmp//
 
 " Make sure vim knows if we are in a virtualenv and add the virtualenv's site-packages to vim path
 py << EOF
