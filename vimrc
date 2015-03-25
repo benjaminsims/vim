@@ -335,7 +335,7 @@ set pastetoggle=<F2>
 " Copy direct to system clipboard
 set clipboard=unnamed
 
-
+set wildignore+=*.pyc
 
 
 " Use jj and kk for exiting to normal mode; seems to be happier at the end as it
