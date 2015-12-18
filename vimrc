@@ -48,7 +48,7 @@ nnoremap - :Switch<cr>
 
 
 " For triggering CtrlP search
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Ultisnips for snippet completion
@@ -326,10 +326,16 @@ nnoremap <Leader>vc :call VimuxSendKeys("C-c") <CR>
 map <Leader>vz :VimuxZoomRunner<CR>
 " Inspect the runner - focus on it and enable scroll mode
 map <Leader>vi :VimuxInspectRunner<CR>
+" Vertical runner
+let g:VimuxOrientation = "h"
+
 " More room
 let g:VimuxHeight = "40"
 
 set pastetoggle=<F2>
+
+" Treat _ as a word boundary
+set iskeyword-=_
 
 
 
