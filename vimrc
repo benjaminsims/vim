@@ -22,7 +22,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'benmills/vimux'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'chrisbra/csv.vim'
+" Bundle 'chrisbra/csv.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 "Trying the tpope version to see if simpler
@@ -45,6 +45,8 @@ Bundle 'davidhalter/jedi-vim'
 " For True / False toggling etc
 Bundle 'AndrewRadev/switch.vim'
 nnoremap - :Switch<cr>
+" Colleagues complaining about trailing whitespace
+Plugin 'ntpeters/vim-better-whitespace' 
 
 
 " For triggering CtrlP search
@@ -337,6 +339,10 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 
 set wildignore+=*.pyc
+set wildignore+=node_modules
+" It may be that this is better than using the vim setting, let's see:
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 
 
 " Use jj and kk for exiting to normal mode; seems to be happier at the end as it
