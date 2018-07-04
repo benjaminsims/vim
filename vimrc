@@ -20,14 +20,15 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 " Send tmux commands from vim
 Bundle 'benmills/vimux'
-Bundle 'kien/ctrlp.vim'
+" Search files
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'chrisbra/csv.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 "Trying the tpope version to see if simpler
 "Bundle 'scrooloose/nerdcommenter'
-Bundle 'myusuf3/numbers.vim'
+" Bundle 'myusuf3/numbers.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
@@ -44,9 +45,20 @@ Bundle 'sjl/vitality.vim'
 Bundle 'davidhalter/jedi-vim'
 " For True / False toggling etc
 Bundle 'AndrewRadev/switch.vim'
+" Syntax highlighting for jq
+Bundle 'vito-c/jq.vim'
+" Auto paste mode on paste
+Bundle 'ConradIrwin/vim-bracketed-paste'
+" HTML tag matching
+Bundle 'gregsexton/MatchTag'
+
+" Correct comment type for jq
+autocmd FileType jq setlocal commentstring=#\ %s
+
 nnoremap - :Switch<cr>
-" Colleagues complaining about trailing whitespace
-Plugin 'ntpeters/vim-better-whitespace' 
+" Colleagues complaining about trailing whitespace - now turned off due to
+" being really annoying
+" Plugin 'ntpeters/vim-better-whitespace' 
 
 
 " For triggering CtrlP search
@@ -148,15 +160,16 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
 " Let Ctrl n change from relative to absolute numbers
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
+" function! NumberToggle()
+  " if(&relativenumber == 1)
+    " set number
+  " else
+    " set relativenumber
+  " endif
+" endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+" nnoremap <C-n> :call NumberToggle()<cr>
+set number
 
 
 
@@ -186,6 +199,10 @@ noremap <Leader>s :update<CR>
 noremap <Leader>q :q<cr>
 "Because of the above, I end up doing this
 noremap <Leader>sq :x<cr>
+
+" Hide files when doing a directory listing
+let g:netrw_list_hide= '.*\.swp$,.*\.pyc'
+
 
 
 " Code folding - za will now open and close code blocks
@@ -285,6 +302,19 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
+augroup markdown
+
+    " remove previous autocmds
+    autocmd!
+
+    " set every new or read *.md buffer to use the markdown filetype 
+    autocmd BufRead,BufNew *.md setf markdown
+
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+
+augroup END
+
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
@@ -333,11 +363,20 @@ let g:VimuxOrientation = "h"
 
 " More room
 let g:VimuxHeight = "40"
+" Rather than create a pane, try to use the nearest one - this helps when
+" to allow tmux do the window setup
+let VimuxUseNearest = 1
+
 
 set pastetoggle=<F2>
 
 " Treat _ as a word boundary
-set iskeyword-=_
+" Breaks too many things
+" set iskeyword-=_
+
+" Not sure I still want relative numbers
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 
 
